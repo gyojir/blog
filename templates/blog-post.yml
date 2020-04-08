@@ -1,0 +1,12 @@
+variables:
+  - name
+files:
+  - path: content/blog/%name%/index.md
+    content: |
+      ---
+      id: %__id%
+      title: %name%
+      date: "%__date%"
+      description: ""
+      tags: []
+      ---
