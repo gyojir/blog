@@ -92,17 +92,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const tags = node.frontmatter.tags
-    const date = new DateTime(node.frontmatter.date).toFormat("yyyy/MM/dd")
+    const date = DateTime.fromISO(node.frontmatter.date).toFormat("yyyy/MM/dd")
     const id = node.frontmatter.id
     const value = `/${date}/${id}`
-
-    console.log(tags)
-    
-    createNodeField({
-      name: `tags`,
-      node,
-      value: []
-    })
     
     createNodeField({
       name: `slug`,
