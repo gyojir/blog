@@ -34,7 +34,7 @@ const Layout = ({ location, children }) => {
         </nav>
       </div>
       <footer>
-        © {new Date().getFullYear()} gyojir
+        Â© {new Date().getFullYear()} gyojir
       </footer>
     </div>
   )
@@ -67,7 +67,8 @@ const styles = {
     }`
   ],
   main: {
-    minWidth: 0, // default?auto?????????
+    flexBasis: rhythm(30),
+    minWidth: 0, // defaultのautoだと小さくならない
     minHeight: 0,
     flexShrink: 1,
   },
