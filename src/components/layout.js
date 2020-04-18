@@ -67,10 +67,11 @@ const styles = {
     }`
   ],
   main: {
-    width: rhythm(30)
+    flexBasis: rhythm(30),
   },
   sidebar: [{
-      width: rhythm(8),
+      flexBasis: rhythm(8),
+      flexGrow: 0,
       flexShrink: 0,
       marginLeft: rhythm(1)
     },    

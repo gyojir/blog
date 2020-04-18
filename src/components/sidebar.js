@@ -31,8 +31,8 @@ const Sidebar = () => {
         <h3>最近の投稿</h3>
         <ul>
           {posts.map(({node}) => (
-            <li>
-              <Link key={node.fields.slug} style={{ boxShadow: `none` }} to={node.fields.slug}>
+            <li key={node.fields.slug}>
+              <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                 {node.frontmatter.title || node.fields.slug}
               </Link>
             </li>
