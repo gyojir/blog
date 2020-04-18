@@ -57,6 +57,6 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "new": "node scaffold/index.js create",
-    "deploy": "gatsby build && gh-pages -d public -b gh-pages"
+    "deploy": "gatsby build && push-dir --dir=public --branch=gh-pages --cleanup"
   }
 }
