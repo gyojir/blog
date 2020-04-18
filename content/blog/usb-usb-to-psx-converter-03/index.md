@@ -61,6 +61,12 @@ stm32のプログラムは少し癖があって、GPIOを使ったりSPI通信�
 スレーブ側（PS1とのSPI通信）設定は以下のような感じになる。
 
 ```cpp
+#define MOSI_PIN GPIO_PIN_15
+#define MISO_PIN GPIO_PIN_14
+#define SCK_PIN GPIO_PIN_13
+#define SS_PIN GPIO_PIN_12
+#define ACK_PIN GPIO_PIN_1
+
 void SPI_Slave_Init(void)
 {
     __GPIOB_CLK_ENABLE();
@@ -159,7 +165,7 @@ void SPI_Master_Init(void)
 
 ## NucleoとArduinoでPS1との通信を模倣
 実際にPS1と通信する前に、ArduinoにPS1側の動作をやらせてみました。  
-Arduino(PS1)側のコードは以下の通り。コイツと通信できれば多分OK？？(OKではなかった)
+Arduino(PS1)側のコードは以下の通り。コイツと通信できれば多分OK？？(OKではなかったが意味はある)
 
 ```cpp
 #include 
