@@ -58,7 +58,8 @@ const Bio = () => {
           <br/>
           {author.summary}
           <br/>
-          <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
+          <a style={{marginRight: rhythm(1/2)}} href={`https://gyojir.com/`}>gyojir.com</a>
+          <a style={{marginRight: rhythm(1/2)}} href={`https://twitter.com/${social.twitter}`}>twitter</a>
         </p>
       </div>
     </div>

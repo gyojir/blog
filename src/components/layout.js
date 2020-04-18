@@ -67,7 +67,9 @@ const styles = {
     }`
   ],
   main: {
-    flexBasis: rhythm(30),
+    minWidth: 0, // default?auto?????????
+    minHeight: 0,
+    flexShrink: 1,
   },
   sidebar: [{
       flexBasis: rhythm(8),
