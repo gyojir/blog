@@ -3,6 +3,7 @@ const yaml = require('js-yaml');
 const inquirer = require('inquirer');
 const shortid = require('shortid');
 const path = require('path');
+const { DateTime } = require('luxon');
 
 const ls = (dir, regex) => {
   const files = fs.readdirSync(dir);
@@ -36,7 +37,7 @@ module.exports = async (args, options, logger) => {
   // 組み込み関数
   result = {
     ...result,
-    __date: new Date().toISOString(),
+    __date: DateTime.local().setZone("UTC+09:00").toISO(),
     __id: shortid.generate()
   }
 
