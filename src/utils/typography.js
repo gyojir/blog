@@ -6,6 +6,9 @@ githubTheme.overrideThemeStyles = () => {
     "h1": {
       borderBottom: `none`,
     },
+    "h2": {
+      borderBottom: `none`,
+    },
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
     },

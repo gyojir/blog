@@ -8,10 +8,9 @@ import { rhythm } from "../utils/typography"
 
 const TagPageTemplate = ({ data, pageContext, location }) => {
   const posts = data.allMarkdownRemark.edges
-  const siteTitle = data.site.siteMetadata.title
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO title={pageContext.tag}/>
       <article>
         <header>
@@ -46,12 +45,7 @@ export default TagPageTemplate
 
 export const pageQuery = graphql`
   query TagPageByTag($tag: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(filter: {frontmatter: {tags: {eq: $tag}}}) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, filter: {frontmatter: {tags: {eq: $tag}}}) {
       edges {
         node {
           id

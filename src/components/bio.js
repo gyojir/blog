@@ -38,18 +38,8 @@ const Bio = () => {
   const { author, social } = data.site.siteMetadata
   return (
     <div>      
-      <hr
-          style={{
-            marginTop: rhythm(3),
-            marginBottom: rhythm(1),
-          }}
-        />          
-      <div
-        style={{
-          display: `flex`,
-          marginBottom: rhythm(2.5),
-        }}
-      >
+      <hr style={{marginTop: rhythm(3)}}/>          
+      <div style={{display: `flex`}}>
         <Image
           fixed={data.avatar.childImageSharp.fixed}
           alt={author.name}

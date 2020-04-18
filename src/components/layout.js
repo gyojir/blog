@@ -1,46 +1,84 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery } from "gatsby"
+import { css } from "@emotion/core"
 
 import { rhythm, scale } from "../utils/typography"
+import Sidebar from "./sidebar"
 
-const Layout = ({ location, title, children }) => {
-  const header = (
-    <h1
-      style={{
-        ...scale(1.2),
-        marginBottom: rhythm(1.5),
-        marginTop: 0,
-        paddingBottom: rhythm(1),
-      }}
-    >
-      <Link
-        style={{
-          boxShadow: `none`,
-          color: `inherit`,
-        }}
-        to={`/`}
-      >
-        {title}
-      </Link>
-    </h1>
-  )
+const Layout = ({ location, children }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
 
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(30),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}
-    >
-      <header>{header}</header>
-      <main>{children}</main>
+    <div css={styles.root}>
+      <header>
+        <h1 css={styles.header}>
+          <Link css={styles.header_link} to={`/`}>
+            {data.site.siteMetadata.title}
+          </Link>
+        </h1>
+      </header>
+      <div css={styles.container}>
+        <main css={styles.main}>
+          {children}
+        </main>
+        <nav css={styles.sidebar}>
+          <Sidebar/>
+        </nav>
+      </div>
       <footer>
         © {new Date().getFullYear()} gyojir
       </footer>
     </div>
   )
+}
+
+const media_max = `768px`;
+
+const styles = {
+  header: {
+    ...scale(1.2),
+    marginBottom: rhythm(1.5),
+    marginTop: 0,
+    paddingBottom: rhythm(1),
+  },
+  header_link: {
+      boxShadow: `none`,
+      color: `inherit`,
+  },
+  root: {
+    marginLeft: `auto`,
+    marginRight: `auto`,
+    padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+    maxWidth: rhythm(40),
+  },
+  container: [
+    {display: `flex`},
+    css`
+    @media (max-width: ${media_max}) {
+      flex-direction: column;
+    }`
+  ],
+  main: {
+    width: rhythm(30)
+  },
+  sidebar: [{
+      width: rhythm(8),
+      flexShrink: 0,
+      marginLeft: rhythm(1)
+    },    
+    css`
+    @media (max-width: ${media_max}) {
+      margin-left: 0
+    }`
+  ]
 }
 
 export default Layout

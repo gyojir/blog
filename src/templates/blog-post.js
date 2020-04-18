@@ -9,46 +9,30 @@ import { DateTime } from "luxon"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
       <article>
         <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
+          <h1 css={styles.title}>
             {post.frontmatter.title}
           </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            <span
-              style={{
-                marginRight: rhythm(1/2)
-              }}
-            >
+          <p css={styles.header_p}>
+            <span css={styles.date}>
               {DateTime.fromISO(post.frontmatter.date).toFormat("yyyy/MM/dd")}
             </span>
 
             {post.frontmatter.tags &&
             post.frontmatter.tags.map(tag=> (
-              <Link to={`/tags/${tag}/`}
-                style={{
-                  marginRight: rhythm(1/5)
-                }}
+              <Link
+                key={tag}
+                to={`/tags/${tag}/`}
+                css={styles.tag}
               >
                 {tag}
               </Link>
@@ -63,15 +47,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </footer>
 
       <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
+        <ul css={styles.nav}>
           <li>
             {previous && (
               <Link to={previous.fields.slug} rel="prev">
@@ -96,11 +72,6 @@ export default BlogPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
@@ -114,3 +85,28 @@ export const pageQuery = graphql`
     }
   }
 `
+
+const styles = {
+  title: {
+    marginTop: rhythm(1),
+    marginBottom: 0,
+  },
+  header_p: {
+    ...scale(-1 / 5),
+    display: `block`,
+    marginBottom: rhythm(1),
+  },  
+  date: {
+    marginRight: rhythm(1/2)
+  },
+  tag: {
+    marginRight: rhythm(1/5)
+  },
+  nav: {
+    display: `flex`,
+    flexWrap: `wrap`,
+    justifyContent: `space-between`,
+    listStyle: `none`,
+    padding: 0,
+  }
+}
