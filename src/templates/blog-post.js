@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import { DateTime } from "luxon"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -39,7 +40,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
                 marginRight: rhythm(1/2)
               }}
             >
-              {post.frontmatter.date}
+              {DateTime.fromISO(post.frontmatter.date).toFormat("yyyy/MM/dd")}
             </span>
 
             {post.frontmatter.tags &&
@@ -106,7 +107,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "YYYY/MM/DD")
+        date
         description
         tags
       }

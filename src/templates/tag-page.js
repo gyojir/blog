@@ -59,9 +59,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            id
             title
-            date(formatString: "YYYY/MM/DD")
             description
             tags
           }
