@@ -117,7 +117,7 @@ void SPI_Slave_Init(void)
 }
 ```
 
-※stm32_interrupt_enableはstm32duinoでのGPIO割り込み設定。
+※stm32\_interrupt\_enableはstm32duinoでのGPIO割り込み設定。
 
 ACKピンのGPIO設定も必要なので以下のようにする
 

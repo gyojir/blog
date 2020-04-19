@@ -34,7 +34,7 @@ const Layout = ({ location, children }) => {
         </nav>
       </div>
       <footer>
-        Â© {new Date().getFullYear()} gyojir
+        © {new Date().getFullYear()} gyojir
       </footer>
     </div>
   )
