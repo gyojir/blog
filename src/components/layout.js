@@ -69,7 +69,6 @@ const styles = {
   main: {
     flexBasis: rhythm(30),
     minWidth: 0, // defaultのautoだと小さくならない
-    minHeight: 0,
     flexShrink: 1,
   },
   sidebar: [{
