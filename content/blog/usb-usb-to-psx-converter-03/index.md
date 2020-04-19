@@ -168,7 +168,10 @@ void SPI_Master_Init(void)
 Arduino(PS1)側のコードは以下の通り。コイツと通信できれば多分OK？？(OKではなかったが意味はある)
 
 ```cpp
-#include 
+/**********************************************
+  Arduino nano SPI(Master)
+**********************************************/
+#include <SPI.h>
 
 #define SS_PIN 10
 #define BUF_SIZE 256
@@ -272,7 +275,7 @@ void delay_us(uint32_t us){
   // 1us / 6.25e-8 = 16
 
   for(uint32_t i = 0; i < us; i++){
-    asm("nop;nop;nop;nop;nop;nop;nop;nop;nop;nop;");
+    asm("nop;nop;nop;nop;nop;nop;nop;nop;nop;nop;nop;nop;nop;nop;nop;nop;");
   }
 }
 ```
