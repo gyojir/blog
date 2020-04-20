@@ -80,8 +80,6 @@ gatsby-starter-blogのデフォルトでは /path/to/post という感じのURL�
 これでファイル名に関してはある程度自由に管理しやすいように決めることができます。
 
 ```js
-const { DateTime } = require('luxon');
-
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
