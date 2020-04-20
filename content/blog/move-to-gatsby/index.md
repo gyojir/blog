@@ -76,7 +76,7 @@ gatsby-starter-blogのデフォルトでは /path/to/post という感じのURL�
 - 記事の日本語タイトルとURL用英語タイトルを考える必要がある
 - 後々変な英語が気になっても直しにくい
 
-という点から、front-matterに設定したidとdateを使って /YYYY/MM/DD/id　という形式に変更しました。
+という点から、front-matterに設定したidを使って /posts/id　という形式に変更しました。
 これでファイル名に関してはある程度自由に管理しやすいように決めることができます。
 
 ```js
@@ -86,9 +86,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
-    const date = DateTime.fromISO(node.frontmatter.date).toFormat("yyyy/MM/dd")
     const id = node.frontmatter.id
-    const value = `/${date}/${id}`
+    const value = `/posts/${id}`
     
     createNodeField({
       name: `slug`,

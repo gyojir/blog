@@ -7,11 +7,11 @@ tags: ["製作記"]
 ---
 
 記事一覧
-- [その1（調査編）](/2019/01/20/mmx5El0Si)
-- [その2（USB編）](/2019/01/21/2stNWIQ7Z)
-- [その3（Nucleo編）](/2019/02/17/vORCOiXb_)　←ココ
-- [その4（ケーブル編）](/2019/02/17/2fluV8sa5)
-- [その5（最終章）](/2019/02/17/kuG0eT691)
+- [その1（調査編）](/posts/mmx5El0Si)
+- [その2（USB編）](/posts/2stNWIQ7Z)
+- [その3（Nucleo編）](/posts/vORCOiXb_)　←ココ
+- [その4（ケーブル編）](/posts/2fluV8sa5)
+- [その5（最終章）](/posts/kuG0eT691)
 
 # PS1と接続…の前に
 Arduino⇔ゲームパッドができたので、後はPS1とArduinoで通信すれば完成だ！と思ったのだけど、ここで問題が発生。
@@ -35,7 +35,7 @@ Nucleoで開発するときはmbedが楽なのだけど、今回は元々Arduino
 
 Arduino開発環境でNucleo使うにはstm32duinoというのを導入するんだけど、それは[stm32duinoのgithub](https://github.com/stm32duino/Arduino_Core_STM32#getting-started)とか[このへん](https://www.denshi.club/pc/nucleo/nucleoarduino1blink.html)を参考にするとできる。  
 
-加えて、Arduino開発環境を使う必要があるけど、Arduino IDEは使い辛くて嫌になったのでVS Codeを使うことにした。VS Codeの拡張機能で[Arduino](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-arduino)と[C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)のやつを入れればコード補間も効くし最高。さらに[このへん](http://kunukunu.hatenablog.com/entry/2018/05/06/190509)を参考にしてデバッガも使えるようにした。この辺りは今度別記事で書くかもしれない。  
+加えて、Arduino開発環境を使う必要があるけど、Arduino IDEは使い辛くて嫌になったのでVS Codeを使うことにした。VS Codeの拡張機能で[Arduino](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-arduino)と[C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)のやつを入れればコード補間も効くし最高。さらに[このへん](http://kunukunu.hatenablog.com/entry/posts/190509)を参考にしてデバッガも使えるようにした。この辺りは今度別記事で書くかもしれない。  
 
 # Nucleo⇔USBゲームパッド
 USBホストシールドはNucleoの互換ピンに直接挿せるのだけど、そのままでは動かない。Arduino UnoではSPI関連のピンをまとめたピンが出ているけど、Nucleoにはそれが無い。USBホストシールドはそのピンを使っていて、周りについているArduinoピンソケットにもつながれていなかった。
