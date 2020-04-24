@@ -7,6 +7,8 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import { DateTime } from "luxon"
 
+require(`katex/dist/katex.min.css`)
+
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const { previous, next } = pageContext
