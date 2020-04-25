@@ -80,9 +80,38 @@ const createTagPage = async (graphql, actions) => {
   })
 }
 
+createRedirectPages = async (graphql, actions) => {
+  const {createRedirect} = actions
+
+  // fetch data from a collection which contains list of urls mapping for redirection
+  let result = await graphql(`
+    {
+      allRedirectsJson {
+        edges {
+          node {
+            old_url
+            new_url
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    throw result.errors
+  }
+  
+  const data = result.data.allRedirectsJson.edges
+  
+  data.forEach(({node}) => {
+    createRedirect({ fromPath: node.old_url, toPath: node.new_url, isPermanent: true });
+  })
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   await createBlogPost(graphql, actions);
   await createTagPage(graphql, actions);
+  await createRedirectPages(graphql, actions);
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
