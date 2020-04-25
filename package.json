@@ -63,6 +63,7 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "new": "node scaffold/index.js create",
-    "deploy": "gatsby build && push-dir --dir=public --branch=gh-pages --cleanup"
+    "deploy": "npm run build && npm run add-domain && push-dir --dir=public --branch=gh-pages --cleanup",
+    "add-domain": "echo blog.gyojir.com > public/CNAME"
   }
 }
