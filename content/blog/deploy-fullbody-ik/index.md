@@ -39,7 +39,7 @@ IKとは逆運動学のことでInverse Kinematicsの略です。
 
 ### 理論 & 実装
 #### ヤコビアンを用いた逆運動学 - 向井研究室
-https://mukai-lab.org/content/JacobianInverseKinematics.pdf (URLが変わったようです)
+https://mukai-lab.org/content/JacobianInverseKinematics.pdf (URLが変わったようです)  
 https://mukai-lab.org/library/ik-legacy/
 
 分かりやすいヤコビアンIKの理論と、シンプルなIKの実装が載っています。
