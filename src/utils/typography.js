@@ -12,6 +12,9 @@ githubTheme.overrideThemeStyles = () => {
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
     },
+    'td,th': {
+        textAlign: null,
+    },
   }
 }
 
