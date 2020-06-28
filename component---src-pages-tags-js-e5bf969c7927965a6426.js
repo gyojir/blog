@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{enK5:function(t,e,l){"use strict";l.r(e);l("q1tI");var b=l("whKl"),n=l("6Gk8"),a=l("Bl7J"),c=l("vrFN"),o=l("qKvR");e.default=function(t){t.data;var e=t.location;return Object(o.b)(a.a,{location:e},Object(o.b)(c.a,{title:"tags"}),Object(o.b)("article",null,Object(o.b)("header",null,Object(o.b)("h1",null,"タグ一覧")),Object(o.b)(b.a,null),Object(o.b)("footer",null,Object(o.b)(n.a,null))))}}}]);
+//# sourceMappingURL=component---src-pages-tags-js-e5bf969c7927965a6426.js.map
