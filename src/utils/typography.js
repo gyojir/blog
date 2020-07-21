@@ -7,7 +7,20 @@ githubTheme.overrideThemeStyles = () => {
       borderBottom: `none`,
     },
     "h2": {
-      borderBottom: `none`,
+      padding: ".25em 0 .25em .5em",
+      borderLeft: "6px solid #ccc"
+    },
+    "h3": {
+      padding: ".25em 0 .25em .5em",
+      borderLeft: "6px solid #ccc"
+    },
+    "h4": {
+      padding: ".25em 0 .25em .5em",
+      borderLeft: "6px solid #ccc"
+    },
+    "h5": {
+      padding: ".25em 0 .25em .5em",
+      borderLeft: "6px solid #ccc"
     },
     "a.gatsby-resp-image-link": {
       boxShadow: `none`,
