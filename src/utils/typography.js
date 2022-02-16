@@ -8,7 +8,8 @@ githubTheme.overrideThemeStyles = () => {
     },
     "h2": {
       padding: ".25em 0 .25em .5em",
-      borderLeft: "6px solid #ccc"
+      borderLeft: "6px solid #ccc",
+      marginBottom: "1rem",
     },
     "h3": {
       padding: ".25em 0 .25em .5em",
