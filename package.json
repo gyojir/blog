@@ -27,7 +27,7 @@
     "gatsby-remark-smartypants": "^2.2.1",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-json": "^2.3.4",
-    "gatsby-transformer-remark": "^2.7.1",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.4.3",
     "katex": "^0.11.1",
     "luxon": "^1.23.0",
