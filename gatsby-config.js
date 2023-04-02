@@ -15,7 +15,7 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-feed`,
+    // `gatsby-plugin-feed`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-json`,
     {
@@ -71,7 +71,7 @@ module.exports = {
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          'gatsby-remark-copy-relative-linked-files',
+          // 'gatsby-remark-copy-relative-linked-files',
           `gatsby-remark-smartypants`,
         ],
       },

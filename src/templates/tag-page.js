@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { rhythm } from "../utils/typography"
 
 const TagPageTemplate = ({ data, pageContext, location }) => {
@@ -11,7 +11,7 @@ const TagPageTemplate = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO title={pageContext.tag}/>
+      <Seo title={pageContext.tag}/>
       <article>
         <header>
           <h1
@@ -45,7 +45,7 @@ export default TagPageTemplate
 
 export const pageQuery = graphql`
   query TagPageByTag($tag: String!) {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, filter: {frontmatter: {tags: {eq: $tag}}}) {
+    allMarkdownRemark(sort: {frontmatter: {date: DESC}}, filter: {frontmatter: {tags: {eq: $tag}}}) {
       edges {
         node {
           id

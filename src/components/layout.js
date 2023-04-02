@@ -1,6 +1,6 @@
 import React from "react"
-import { Link, useStaticQuery } from "gatsby"
-import { css } from "@emotion/core"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { css } from "@emotion/react"
 
 import { rhythm, scale } from "../utils/typography"
 import Sidebar from "./sidebar"

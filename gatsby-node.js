@@ -9,7 +9,7 @@ const createBlogPost = async (graphql, actions) => {
   const result = await graphql(`
     {
       allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
+        sort: {frontmatter: {date: DESC}}
       ) {
         edges {
           node {
@@ -56,7 +56,7 @@ const createTagPage = async (graphql, actions) => {
   const result = await graphql(`
     {
       allMarkdownRemark {
-        group(field: frontmatter___tags){   
+        group(field: {frontmatter: {tags: SELECT}}){   
           name: fieldValue
           totalCount
         }
